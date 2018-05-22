@@ -10,3 +10,5 @@
 ```
 
 2. 根据个人/团队代码规范，配置`eslint`
+
+3. 安装[`vuex`](https://vuex.vuejs.org/zh/)
