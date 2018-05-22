@@ -24,6 +24,7 @@ module.exports = {
     // Common
     // 使用类型安全的 === 和 !==
     'eqeqeq': [1, 'always'],
+    'no-unused-vars': [1],
 
     // 风格约束
     // 缩进为2个空格
