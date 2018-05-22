@@ -1,5 +1,5 @@
-let SGrid = () => import(/* webpackChunkName: 'SGrid' */ './Grid');
-let SGridItem = () => import(/* webpackChunkName: 'SGridItem' */ './GridItem');
+let SGrid = () => import(/* webpackChunkName: 'grid' */ './Grid');
+let SGridItem = () => import(/* webpackChunkName: 'grid-item' */ './GridItem');
 
 module.exports = {
   SGrid,

@@ -10,7 +10,9 @@
             <s-grid-item :flex="2">A2</s-grid-item>
           </s-grid>
         </s-grid-item>
-        <s-grid-item>B</s-grid-item>
+        <s-grid-item>
+          <s-empty></s-empty>
+        </s-grid-item>
       </s-grid>
     </div>
   </div>
