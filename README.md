@@ -17,10 +17,8 @@
 
 5. 引入`Element`，完成`SEmpty`默认显示块；
 
-  > 为了方便在`GithubPage`展示效果，将build后`dist`中的结果拷贝至`demo`目录，并将资源路径改为相对路径。
+  > 为了方便在`GithubPage`展示效果，将build后`dist`中的结果拷贝至`demo`目录，并修改资源路径。
 
   > 异步组件配合代码分离时：
-
-    >> 若使用插件的形式，`s-empty`在`dev`模式下渲染正常，在`buid`模式下无法渲染。[ISSUE](https://github.com/SunInfoFE/vue-layout-diy/issues/1)
-
-    >> 在`main.js`中通过`Vue.component`直接注册则正常。
+  >> 若使用插件的形式，`s-empty`在`dev`模式下渲染正常，在`buid`模式下无法渲染。[ISSUE](https://github.com/SunInfoFE/vue-layout-diy/issues/1)
+  在`main.js`中通过`Vue.component`直接注册则正常。
