@@ -3,14 +3,13 @@
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import App from './App';
-import Portlet from './portlet';
 import router from './router';
 import store from './store';
 
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
-Vue.use(Portlet);
+Vue.component('s-empty', () => import(/* webpackChunkName: 'empty' */ './portlet/Empty'));
 
 /* eslint-disable no-new */
 new Vue({
