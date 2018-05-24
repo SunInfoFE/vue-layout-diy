@@ -1,13 +1,15 @@
 # vue-layout-diy
 基于vue和flex的自定义布局，[点击查看demo](https://suninfofe.github.io/vue-layout-diy/dist/index.html)。
 
+> `S`前缀为`Sunflower`简写
+
 ## 项目步骤
 
 1. 使用`vue-cli@2.9.3`初始化项目；
 
-```bash
-  vue init webpack vue-layout-diy
-```
+  ```bash
+    vue init webpack vue-layout-diy
+  ```
 
 2. 根据个人/团队代码规范，配置`eslint`；
 
@@ -24,3 +26,5 @@
   > ~~为了方便在`GithubPage`展示效果，将build后`dist`中的结果拷贝至`demo`目录，并修改资源路径。~~ <br>
   由于`demo`并非部署在`Web`服务器根目录下，所以分离的异步js文件找不到。[ISSUE](https://github.com/SunInfoFE/vue-layout-diy/issues/2)
   >> 需要修改`config/index.js`中的`build.assetsPublicPath`为`./`，`.gitignore`中取消忽略`dist`目录，将`dist`目录作为`demo`页。
+
+6. `Vuex`中定义默认数据结构，再次封装`SGrid` `SGridItem`为`SLayout`，实现初始化布局；
