@@ -1,16 +1,16 @@
 <template>
-  <s-grid :diretion="portlets.direction">
+  <s-grid :direction="portlet.direction">
     <s-grid-item
-      v-for="(size, index) in portlets.size"
+      v-for="(size, index) in portlet.size"
       :key="index"
       :flex="size">
-      <template v-if="portlets.content[index].key">
-        <s-layout :portlets="portlets.content[index]"></s-layout>
+      <template v-if="portlet.content[index].key">
+        <s-layout :portlet="portlet.content[index]"></s-layout>
       </template>
       <template v-else>
         <component
-          :is="portlets.content[index]"
-          :key-str="portlets.key ? portlets.key + String(index) : String(index)">
+          :is="portlet.content[index]"
+          :key-str="portlet.key ? portlet.key + String(index) : String(index)">
         </component>
       </template>
     </s-grid-item>
@@ -34,16 +34,11 @@ export default {
           direction: 'row',
           size: [1],
           content: [
-            'SEmpty'
+            's-empty'
           ]
         };
       }
     }
-  },
-  data () {
-    return {
-      portlets: this.portlet
-    };
   }
 };
 </script>

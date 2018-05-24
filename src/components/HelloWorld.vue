@@ -13,9 +13,6 @@ export default {
   components: {
     SLayout
   },
-  data () {
-    return {};
-  },
   computed: {
     ...mapState({
       portlet: (state) => state.portlet

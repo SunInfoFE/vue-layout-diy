@@ -28,3 +28,5 @@
   >> 需要修改`config/index.js`中的`build.assetsPublicPath`为`./`，`.gitignore`中取消忽略`dist`目录，将`dist`目录作为`demo`页。
 
 6. `Vuex`中定义默认数据结构，再次封装`SGrid` `SGridItem`为`SLayout`，实现初始化布局；
+
+7. 实现拆分块功能；

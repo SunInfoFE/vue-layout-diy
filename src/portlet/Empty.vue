@@ -15,9 +15,35 @@
 <script>
 export default {
   name: 'SEmpty',
+  props: {
+    KeyStr: {
+      type: String,
+      required: true
+    }
+  },
+  data () {
+    return {
+      key: this.KeyStr
+    };
+  },
   methods: {
     handleCommand (command) {
-      console.log(command);
+      if (command === '1') {
+        let direction = ['row', 'column'];
+        let idx = Math.round(Math.random());
+        this.$store.commit('splitPortlet', {
+          content: {
+            direction: direction[idx],
+            size: [1, 1],
+            key: this.key,
+            content: [
+              's-empty',
+              's-empty'
+            ]
+          },
+          key: this.key
+        });
+      }
     }
   }
 };

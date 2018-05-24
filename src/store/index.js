@@ -12,6 +12,19 @@ const store = new Vuex.Store({
         's-empty'
       ]
     }
+  },
+  mutations: {
+    splitPortlet (state, payload) {
+      let { content, key } = payload;
+      let str = 'state.portlet';
+      for (let i = 0; i < key.length; i++) {
+        str += `.content[${key[i]}]`;
+      }
+      str += `= ${JSON.stringify(content)}`;
+      /* eslint-disable */
+      eval(str);
+      state.portlet = JSON.parse(JSON.stringify(state.portlet));
+    }
   }
 });
 
