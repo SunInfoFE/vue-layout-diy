@@ -9,40 +9,34 @@
         <el-dropdown-item command="2">选择内容</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
+    <split-dialog :show.sync="show" :key-str="key"></split-dialog>
   </div>
 </template>
 
 <script>
+import SplitDialog from '../components/SplitDialog';
+
 export default {
   name: 'SEmpty',
+  components: {
+    SplitDialog
+  },
   props: {
-    KeyStr: {
+    keyStr: {
       type: String,
       required: true
     }
   },
   data () {
     return {
-      key: this.KeyStr
+      key: this.keyStr,
+      show: false
     };
   },
   methods: {
     handleCommand (command) {
       if (command === '1') {
-        let direction = ['row', 'column'];
-        let idx = Math.round(Math.random());
-        this.$store.commit('splitPortlet', {
-          content: {
-            direction: direction[idx],
-            size: [1, 1],
-            key: this.key,
-            content: [
-              's-empty',
-              's-empty'
-            ]
-          },
-          key: this.key
-        });
+        this.show = true;
       }
     }
   }
