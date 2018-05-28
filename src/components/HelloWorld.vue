@@ -33,4 +33,13 @@ export default {
 .hello .s-empty {
   border: 1px dashed #a0cfff;
 }
+.s-grid-item-content {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #a0cfff;
+}
 </style>

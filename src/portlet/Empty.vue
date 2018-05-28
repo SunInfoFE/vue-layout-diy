@@ -9,17 +9,20 @@
         <el-dropdown-item command="2">选择内容</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
-    <split-dialog :show.sync="show" :key-str="key"></split-dialog>
+    <dialog-split :show.sync="show" :key-str="key"></dialog-split>
+    <dialog-content :show.sync="display" :key-str="key"></dialog-content>
   </div>
 </template>
 
 <script>
-import SplitDialog from '../components/SplitDialog';
+let DialogSplit = () => import(/* webpackChunkName: 'dialog-split' */ '../components/DialogSplit');
+let DialogContent = () => import(/* webpackChunkName: 'dialog-content' */ '../components/DialogContent');
 
 export default {
   name: 'SEmpty',
   components: {
-    SplitDialog
+    DialogSplit,
+    DialogContent
   },
   props: {
     keyStr: {
@@ -30,13 +33,16 @@ export default {
   data () {
     return {
       key: this.keyStr,
-      show: false
+      show: false,
+      display: false
     };
   },
   methods: {
     handleCommand (command) {
       if (command === '1') {
         this.show = true;
+      } else {
+        this.display = true;
       }
     }
   }

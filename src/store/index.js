@@ -14,7 +14,7 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    splitPortlet (state, payload) {
+    portletSet (state, payload) {
       let { content, key } = payload;
       let str = 'state.portlet';
       for (let i = 0; i < key.length; i++) {

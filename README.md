@@ -32,6 +32,8 @@
 7. 实现拆分块功能；
    1. 方向随机1:1拆分;
    2. 设置拆分方向和比例；
-      1. 注意`split-dialog`中[`.sync修饰符`](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6)的用法；
-      2. `split-dialog`传递`prop: show`时，注意[单向数据流](https://cn.vuejs.org/v2/guide/components-props.html#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81)的问题：
-          > 在`SplitDialog`中，若定义一个本地的`data`属性并将`prop: show`用做其初始值，那么这个`data`永远是`false`，`Dialog`永远不会被打开，所以需要用这个`prop`的值来定义一个计算属性`visible`，此时`visible`将会跟`prop: show`的值保持同步。在`el-dialog`的`prop: visible`中，我们不能使用修饰符`.async`，因为这个修饰符会给`el-dialog`添加`update:visible`事件监听，关闭`el-dialog`会触发此事件，也就是会强制修改刚才添加的计算属性`visible`，这是绝对不允许的。在`el-dialog`的`close`事件中，我们触发了`split-dialog`的`update:show`事件，更新了`data: show`的值，那么`SplitDialog`的计算属性`visible`也会相应更新。
+      1. 注意`dialog-split`中[`.sync修饰符`](https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6)的用法；
+      2. `dialog-split`传递`prop: show`时，注意[单向数据流](https://cn.vuejs.org/v2/guide/components-props.html#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81)的问题：
+          > 在`DialogSplit`中，若定义一个本地的`data`属性并将`prop: show`用做其初始值，那么这个`data`永远是`false`，`Dialog`永远不会被打开，所以需要用这个`prop`的值来定义一个计算属性`visible`，此时`visible`将会跟`prop: show`的值保持同步。在`el-dialog`的`prop: visible`中，我们不能使用修饰符`.async`，因为这个修饰符会给`el-dialog`添加`update:visible`事件监听，关闭`el-dialog`会触发此事件，也就是会强制修改刚才添加的计算属性`visible`，这是绝对不允许的。在`el-dialog`的`close`事件中，我们触发了`dialog-split`的`update:show`事件，更新了`data: show`的值，那么`DialogSplit`的计算属性`visible`也会相应更新。
+
+8. 添加示例业务组件，完成选择内容功能。

@@ -40,7 +40,6 @@
 
 <script>
 export default {
-  name: '',
   props: {
     show: Boolean,
     keyStr: {
@@ -80,7 +79,7 @@ export default {
       this.form.content = new Array(value).fill('s-empty');
     },
     handleSubmit () {
-      this.$store.commit('splitPortlet', {
+      this.$store.commit('portletSet', {
         content: {
           direction: this.form.direction,
           size: this.form.size,
